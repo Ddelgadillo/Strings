@@ -1,4 +1,5 @@
 #include<conio.h>
+#include<fstream>
 
 //Takes an array of chars and put them in the console 1 by 1
 void print(const char* s)
@@ -80,7 +81,32 @@ int Fibonacci(int x)
 void Chart()
 {
 	print("(l)oad (s)ave (a)dd (q)uit or (p)rint? ");
-	char ans[5];
+	char ans = _getch();
+	_putch(ans);
+
+	switch (ans)
+	{
+	case 'l':
+	{
+		std::ifstream in;
+	}
+		break;
+	case 's':
+		break;
+	case 'a':
+	{
+		print("\nEnter Value: ");
+		char value[8];
+		Read(value, 8);
+	}
+		break;
+	case 'q':
+		break;
+	case 'p':
+		break;
+	default:
+		print("\nWrong input try again!");
+	}
 }
 
 int main()
@@ -133,6 +159,7 @@ int main()
 	print((char*)fib);
 	*/
 
+	Chart();
 
 	while (!_kbhit()); //loop as long as user does not press something on keyboard
 
